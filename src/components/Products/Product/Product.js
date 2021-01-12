@@ -18,21 +18,23 @@ const Product = ({ product }) => {
     <Card className={classes.root}>
       <CardMedia
         className={classes.media}
-        image={product.image}
+        image={product.media.source}
         title={product.name}
       />
       <CardContent>
         <div className={classes.cardContent}>
-          <Typography variant="h5" getterBottom>
+          <Typography variant="h5" gutterBottom>
             {product.name}
           </Typography>
-          <Typography variant="h5" getterBottom>
-            {product.price}
+          <Typography variant="h5" gutterBottom>
+            {product.price.formatted_with_symbol}
           </Typography>
         </div>
-        <Typography variatn="body2" color="textSecondary">
-          {product.description}
-        </Typography>
+        <Typography
+          dangerouslySetInnerHTML={{ __html: product.description }}
+          variatn="body2"
+          color="textSecondary"
+        />
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
         <IconButton aria-label="Add to Card">

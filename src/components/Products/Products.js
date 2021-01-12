@@ -2,29 +2,10 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 
 import Product from "./Product/Product";
-import shoes from "../../images/shoes.jpeg";
-import phone from "../../images/phone.jpg";
 
 import useStyles from "./styles";
 
-const products = [
-  {
-    id: 1,
-    name: "shoes",
-    description: "running shoes",
-    price: "$1",
-    image: shoes,
-  },
-  {
-    id: 2,
-    name: "phone",
-    description: "mobile phone oppo",
-    price: "$200",
-    image: phone,
-  },
-];
-
-export const Products = () => {
+export const Products = ({ products }) => {
   const classes = useStyles();
   return (
     <main className={classes.content}>
