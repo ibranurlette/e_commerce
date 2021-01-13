@@ -33,11 +33,7 @@ const App = () => {
       <Navbar totalItems={cart.total_items} />
       {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
 
-      {Object.entries(cart).length === 0 ? (
-        <h1>LOADINGS....</h1>
-      ) : (
-        <Cart cart={cart} />
-      )}
+      <Cart cart={cart} />
     </div>
   );
 };
